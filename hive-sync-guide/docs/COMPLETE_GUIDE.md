@@ -1265,19 +1265,19 @@ Track key metrics:
  
 ### Convex
  
-See [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md#example-1-convex) for Convex example.
+See [QUICK_START.md](./QUICK_START.md#example-1-convex) for Convex example.
  
 ### PostgreSQL (Prisma)
  
-See [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md#example-2-postgresql-via-prisma) for PostgreSQL example.
+See [QUICK_START.md](./QUICK_START.md#example-2-postgresql-via-prisma) for PostgreSQL example.
  
 ### Supabase
  
-See [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md#example-3-supabase) for Supabase example.
+See [QUICK_START.md](./QUICK_START.md#example-3-supabase) for Supabase example.
  
 ### MongoDB
  
-See [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md#example-4-mongodb) for MongoDB example.
+See [QUICK_START.md](./QUICK_START.md#example-4-mongodb) for MongoDB example.
  
 ---
  
@@ -1305,4 +1305,5 @@ You now have a complete understanding of how to implement database synchronizati
 - Quick Start: [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md)
 - Convex-specific: [HIVE_CONVEX_SYNC.md](./HIVE_CONVEX_SYNC.md)
 - Blade Triggers: [BLADE_TRIGGERS_SYNC_GUIDE.md](./BLADE_TRIGGERS_SYNC_GUIDE.md)
+
 
