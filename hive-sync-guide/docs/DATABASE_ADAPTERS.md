@@ -1149,10 +1149,10 @@ curl -X POST http://localhost:3000/sync \
  
 - **Quick Start:** [QUICK_START.md](./QUICK_START.md)
 - **Complete Guide:** [COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md)
-- **Convex-specific:** [CONVEX_SYNC.md](./CONVEX_SYNC.md)
- 
+
 ---
  
 **That's it!** Choose your database, copy the adapter code, and start syncing! 🚀
+
 
 
