@@ -213,11 +213,11 @@ try {
  
 | Need | Read | Time |
 |------|------|------|
-| Quick start | [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md) | 10 min |
-| Production | [HIVE_SYNC_COMPLETE_GUIDE.md](./HIVE_SYNC_COMPLETE_GUIDE.md) | 30 min |
-| DB Code | [HIVE_SYNC_DATABASE_ADAPTERS.md](./HIVE_SYNC_DATABASE_ADAPTERS.md) | 5 min |
-| Convex | [HIVE_CONVEX_SYNC.md](./HIVE_CONVEX_SYNC.md) | 15 min |
-| Triggers | [BLADE_TRIGGERS_SYNC_GUIDE.md](./BLADE_TRIGGERS_SYNC_GUIDE.md) | 25 min |
+| Quick start | [QUICK_START.md](./QUICK_START.md) | 10 min |
+| Production | [COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md) | 30 min |
+| DB Code | [DATABASE_ADAPTERS.md](./DATABASE_ADAPTERS.md) | 5 min |
+| Convex | [convex.md](./reference/convex.md) | 15 min |
+| Triggers | [triggers.md](./reference/triggers.md) | 25 min |
 ---
  
 ## ⚡ Common Commands
@@ -271,4 +271,5 @@ Database - Stores data
 **Print this card and keep it handy!** 📋
  
 For complete guides, see [SYNC_README_INDEX.md](./SYNC_README_INDEX.md)
+
 
