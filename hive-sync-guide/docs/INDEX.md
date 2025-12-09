@@ -71,7 +71,7 @@ Each adapter includes:
  
 ## 🎯 Specific Implementations
  
-### [CONVEX_SYNC.md](./CONVEX_SYNC.md)
+### [convex.md](./convex.md)
  
 **Detailed Convex.dev integration guide:**
 - Convex schema setup
@@ -83,7 +83,7 @@ Each adapter includes:
  
 ---
  
-### [BLADE_TRIGGERS_SYNC_GUIDE.md](./BLADE_TRIGGERS_SYNC_GUIDE.md)
+### [triggers.md](./triggers.md)
  
 **Comprehensive Blade triggers reference:**
 - All trigger hooks explained
@@ -108,10 +108,10 @@ Each adapter includes:
 → Check **[DATABASE_ADAPTERS.md](./DATABASE_ADAPTERS.md)**
  
 ### "I'm using Convex"
-→ Use **[CONVEX_SYNC.md](./CONVEX_SYNC.md)**
+→ Use **[convex.md](./convex.md)**
  
 ### "I want to understand triggers deeply"
-→ Study **[BLADE_TRIGGERS_SYNC_GUIDE.md](./BLADE_TRIGGERS_SYNC_GUIDE.md)**
+→ Study **[triggers.md](./triggers.md)**
  
 ---
  
@@ -410,11 +410,12 @@ You now have everything you need to:
 - ✅ Debug and troubleshoot issues
 - ✅ Optimize for performance
  
-**Start with the [Quick Start Guide](./HIVE_SYNC_QUICK_START.md) and you'll be syncing in 10 minutes!** 🚀
+**Start with the [Quick Start Guide](./QUICK_START.md) and you'll be syncing in 10 minutes!** 🚀
  
 ---
  
 **Questions?** Check the troubleshooting sections in each guide or open an issue in the repository.
 Request changes...
+
 
 
