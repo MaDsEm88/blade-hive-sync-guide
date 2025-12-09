@@ -490,11 +490,12 @@ openssl rand -hex 32
  
 ## Need Help?
  
-- Check the full guide: `HIVE_SYNC_COMPLETE_GUIDE.md`
-- Review database examples: `HIVE_SYNC_DATABASE_ADAPTERS.md`
-- See Convex implementation: `HIVE_CONVEX_SYNC.md`
+- Check the full guide: `COMPLETE_GUIDE.md`
+- Review database examples: `DATABASE_ADAPTERS.md`
+- See Convex implementation: `convex.md`
  
 ---
  
 **That's it!** You now have a working sync system between Blade's Hive database and your external database. 🎉
+
 
