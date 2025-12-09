@@ -71,7 +71,7 @@ Each adapter includes:
  
 ## 🎯 Specific Implementations
  
-### [convex.md](./convex.md)
+### [convex.md](hive-sync-guide/docs/reference/convex.md)
  
 **Detailed Convex.dev integration guide:**
 - Convex schema setup
@@ -83,7 +83,7 @@ Each adapter includes:
  
 ---
  
-### [triggers.md](./triggers.md)
+### [triggers.md](hive-sync-guide/docs/reference/triggers.md)
  
 **Comprehensive Blade triggers reference:**
 - All trigger hooks explained
@@ -416,6 +416,7 @@ You now have everything you need to:
  
 **Questions?** Check the troubleshooting sections in each guide or open an issue in the repository.
 Request changes...
+
 
 
 
