@@ -1,2 +1,293 @@
-// Prisma schema example for PostgreSQL sync
-// TODO: Add example schema
+// Prisma schema example for PostgreSQL sync with Blade Hive
+// This defines the PostgreSQL database schema that mirrors your Hive models
+ 
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+ 
+// ==================== USERS ====================
+// Synced from Hive Account model
+model User {
+  id        String   @id @default(cuid())
+  
+  // Link to Hive database
+  bladeId   String   @unique @map("blade_id")
+  
+  // Core fields
+  email     String   @unique
+  name      String?
+  handle    String?  @unique
+  
+  // Profile
+  bio       String?
+  avatar    String?
+  
+  // Status
+  emailVerified Boolean @default(false) @map("email_verified")
+  isActive      Boolean @default(true) @map("is_active")
+  
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  
+  // Relations
+  posts     Post[]
+  comments  Comment[]
+  likes     Like[]
+  sessions  Session[]
+  
+  @@map("users")
+  @@index([bladeId])
+  @@index([email])
+  @@index([handle])
+}
+ 
+// ==================== POSTS ====================
+// Synced from Hive Post model
+model Post {
+  id        String   @id @default(cuid())
+  
+  // Link to Hive
+  bladeId   String   @unique @map("blade_id")
+  
+  // Core fields
+  title     String
+  content   String   @db.Text
+  excerpt   String?
+  
+  // Author
+  authorBladeId String @map("author_blade_id")
+  author        User   @relation(fields: [authorBladeId], references: [bladeId], onDelete: Cascade)
+  
+  // Status
+  published Boolean  @default(false)
+  featured  Boolean  @default(false)
+  
+  // Metadata
+  tags      String[]
+  viewCount Int      @default(0) @map("view_count")
+  likeCount Int      @default(0) @map("like_count")
+  
+  // Timestamps
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  publishedAt DateTime? @map("published_at")
+  
+  // Relations
+  comments Comment[]
+  likes    Like[]
+  
+  @@map("posts")
+  @@index([bladeId])
+  @@index([authorBladeId])
+  @@index([published])
+  @@index([published, publishedAt])
+  @@index([featured])
+}
+ 
+// ==================== COMMENTS ====================
+// Synced from Hive Comment model
+model Comment {
+  id        String   @id @default(cuid())
+  
+  // Link to Hive
+  bladeId   String   @unique @map("blade_id")
+  
+  // Core fields
+  content   String   @db.Text
+  
+  // Post
+  postBladeId String @map("post_blade_id")
+  post        Post   @relation(fields: [postBladeId], references: [bladeId], onDelete: Cascade)
+  
+  // Author
+  authorBladeId String @map("author_blade_id")
+  author        User   @relation(fields: [authorBladeId], references: [bladeId], onDelete: Cascade)
+  
+  // Parent comment (for nested comments)
+  parentBladeId String?  @map("parent_blade_id")
+  parent        Comment? @relation("CommentReplies", fields: [parentBladeId], references: [bladeId])
+  replies       Comment[] @relation("CommentReplies")
+  
+  // Status
+  isDeleted Boolean @default(false) @map("is_deleted")
+  isEdited  Boolean @default(false) @map("is_edited")
+  
+  // Metadata
+  likeCount Int     @default(0) @map("like_count")
+  
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  
+  // Relations
+  likes Like[]
+  
+  @@map("comments")
+  @@index([bladeId])
+  @@index([postBladeId])
+  @@index([authorBladeId])
+  @@index([parentBladeId])
+}
+ 
+// ==================== LIKES ====================
+// Track user likes for posts/comments
+model Like {
+  id        String   @id @default(cuid())
+  
+  // User
+  userBladeId String @map("user_blade_id")
+  user        User   @relation(fields: [userBladeId], references: [bladeId], onDelete: Cascade)
+  
+  // Target (post or comment)
+  targetBladeId String     @map("target_blade_id")
+  targetType    TargetType @map("target_type")
+  
+  // Optional relations
+  post    Post?    @relation(fields: [postBladeId], references: [bladeId], onDelete: Cascade)
+  postBladeId String? @map("post_blade_id")
+  
+  comment Comment? @relation(fields: [commentBladeId], references: [bladeId], onDelete: Cascade)
+  commentBladeId String? @map("comment_blade_id")
+  
+  // Timestamp
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  @@unique([userBladeId, targetBladeId])
+  @@map("likes")
+  @@index([userBladeId])
+  @@index([targetBladeId])
+}
+ 
+enum TargetType {
+  POST
+  COMMENT
+}
+ 
+// ==================== SESSIONS ====================
+// Optional: Track active sessions for presence
+model Session {
+  id        String   @id @default(cuid())
+  
+  userBladeId String   @map("user_blade_id")
+  user        User     @relation(fields: [userBladeId], references: [bladeId], onDelete: Cascade)
+  
+  deviceId   String?  @map("device_id")
+  lastActive DateTime @default(now()) @map("last_active")
+  isOnline   Boolean  @default(true) @map("is_online")
+  
+  @@map("sessions")
+  @@index([userBladeId])
+  @@index([isOnline])
+}
+ 
+// ==================== NOTIFICATIONS ====================
+// Real-time notifications
+model Notification {
+  id        String   @id @default(cuid())
+  
+  userBladeId String @map("user_blade_id")
+  type        String
+  title       String
+  message     String @db.Text
+  actionUrl   String? @map("action_url")
+  isRead      Boolean @default(false) @map("is_read")
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  @@map("notifications")
+  @@index([userBladeId])
+  @@index([userBladeId, isRead])
+}
+ 
+// ==================== ANALYTICS ====================
+// Track events for analytics
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  
+  eventName   String   @map("event_name")
+  userBladeId String?  @map("user_blade_id")
+  properties  Json?
+  timestamp   DateTime @default(now())
+  
+  @@map("analytics_events")
+  @@index([eventName])
+  @@index([userBladeId])
+  @@index([timestamp])
+}
+ 
+// ==================== SCHEMA NOTES ====================
+/*
+ * Design Principles:
+ * 
+ * 1. **bladeId fields** - Every table has a blade_id that maps to Hive record ID
+ *    Marked as @unique to ensure one-to-one mapping
+ * 
+ * 2. **Snake case mapping** - Use @map() to convert camelCase to snake_case
+ *    This follows PostgreSQL naming conventions
+ * 
+ * 3. **Indexes** - All foreign keys and frequently queried fields have indexes
+ *    Uses @@index for composite indexes
+ * 
+ * 4. **Cascade deletes** - Relations use onDelete: Cascade
+ *    This maintains referential integrity
+ * 
+ * 5. **Text fields** - Large content uses @db.Text
+ *    This optimizes storage for long text
+ * 
+ * 6. **Timestamps** - Auto-managed with @default(now()) and @updatedAt
+ *    Prisma handles these automatically
+ * 
+ * 7. **Optional fields** - Use ? for nullable fields
+ *    Makes sync more flexible
+ */
+ 
+// ==================== MIGRATION COMMANDS ====================
+/*
+ * Initial setup:
+ * npx prisma init
+ * 
+ * Create migration:
+ * npx prisma migrate dev --name init
+ * 
+ * Generate client:
+ * npx prisma generate
+ * 
+ * Apply migrations:
+ * npx prisma migrate deploy
+ * 
+ * Reset database:
+ * npx prisma migrate reset
+ * 
+ * View database:
+ * npx prisma studio
+ */
+ 
+// ==================== USAGE EXAMPLES ====================
+/*
+ * Upsert user:
+ * await prisma.user.upsert({
+ *   where: { bladeId: 'abc123' },
+ *   update: { name: 'New Name' },
+ *   create: { bladeId: 'abc123', email: 'user@example.com', name: 'Name' },
+ * });
+ * 
+ * Query posts with author:
+ * const posts = await prisma.post.findMany({
+ *   where: { published: true },
+ *   include: { author: true },
+ *   orderBy: { publishedAt: 'desc' },
+ *   take: 10,
+ * });
+ * 
+ * Delete user and cascade:
+ * await prisma.user.delete({
+ *   where: { bladeId: 'abc123' },
+ * });
+ */
+
