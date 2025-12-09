@@ -37,19 +37,19 @@ We have ready-to-use adapters for:
 ### 2. Read the Guide
 
 **New to this?** → Start here:
-- **[HIVE_SYNC_QUICK_START.md](./docs/QUICK_START.md)** - 10-minute setup
+- **[QUICK_START.md](./docs/QUICK_START.md)** - 10-minute setup
 
 **Need production-ready code?** → Read this:
-- **[HIVE_SYNC_COMPLETE_GUIDE.md](./docs/COMPLETE_GUIDE.md)** - Full implementation
+- **[COMPLETE_GUIDE.md](./docs/COMPLETE_GUIDE.md)** - Full implementation
 
 **Want database-specific code?** → Copy from here:
-- **[HIVE_SYNC_DATABASE_ADAPTERS.md](./docs/DATABASE_ADAPTERS.md)** - 9 ready-to-use adapters
+- **[DATABASE_ADAPTERS.md](./docs/DATABASE_ADAPTERS.md)** - 9 ready-to-use adapters
 
 **Using Convex specifically?** → Check this:
-- **[HIVE_CONVEX_SYNC.md](./docs/reference/convex.md)** - Convex deep dive
+- **[convex.md](./docs/reference/convex.md)** - Convex deep dive
 
 **Want to master triggers?** → Study this:
-- **[BLADE_TRIGGERS_SYNC_GUIDE.md](./docs/reference/triggers.md)** - Complete triggers reference
+- **[triggers.md](./docs/reference/triggers.md)** - Complete triggers reference
 
 ### 3. Implement (4 Simple Steps)
 
@@ -294,5 +294,6 @@ This sync system was built for [Blade](https://blade.new), a modern React 19 fra
 **Ready to start?** → Open [QUICK_START.md](./docs/QUICK_START.md) and follow the 4-step guide!
 
 **Questions?** → Check [INDEX.md](./docs/INDEX.md) for the complete documentation index.
+
 
 Happy syncing! 🚀
