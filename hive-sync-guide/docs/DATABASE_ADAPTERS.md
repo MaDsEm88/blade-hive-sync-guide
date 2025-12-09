@@ -1147,11 +1147,12 @@ curl -X POST http://localhost:3000/sync \
  
 ## Need Help?
  
-- **Quick Start:** [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md)
-- **Complete Guide:** [HIVE_SYNC_COMPLETE_GUIDE.md](./HIVE_SYNC_COMPLETE_GUIDE.md)
-- **Convex-specific:** [HIVE_CONVEX_SYNC.md](./HIVE_CONVEX_SYNC.md)
+- **Quick Start:** [QUICK_START.md](./QUICK_START.md)
+- **Complete Guide:** [COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md)
+- **Convex-specific:** [CONVEX_SYNC.md](./CONVEX_SYNC.md)
  
 ---
  
 **That's it!** Choose your database, copy the adapter code, and start syncing! 🚀
+
 
