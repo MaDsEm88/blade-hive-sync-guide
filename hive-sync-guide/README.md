@@ -278,7 +278,7 @@ These documentation files are provided as-is for educational purposes. Feel free
 
 ## Credits
 
-This sync system was built for [Blade](https://blade.new), a modern React 19 framework with embedded Hive database.
+This sync system was built for [Blade](https://blade.im), a modern React 19 framework with embedded Hive database.
 
 ---
 
@@ -297,3 +297,4 @@ This sync system was built for [Blade](https://blade.new), a modern React 19 fra
 
 
 Happy syncing! 🚀
+
