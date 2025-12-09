@@ -12,7 +12,7 @@ This folder contains comprehensive guides for implementing database synchronizat
  
 **New to Hive sync?** Start here:
  
-### [HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md)
+### [QUICK_START.md](./QUICK_START.md)
  
 **10-minute setup guide** with:
 - ✅ Minimal configuration
@@ -27,7 +27,7 @@ This folder contains comprehensive guides for implementing database synchronizat
  
 ## 📖 Complete Guides
  
-### [HIVE_SYNC_COMPLETE_GUIDE.md](./HIVE_SYNC_COMPLETE_GUIDE.md)
+### [COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md)
  
 **Production-ready implementation guide** covering:
 - 🏗️ Architecture deep dive
@@ -44,7 +44,7 @@ This folder contains comprehensive guides for implementing database synchronizat
  
 ## 🔌 Database Adapters
  
-### [HIVE_SYNC_DATABASE_ADAPTERS.md](./HIVE_SYNC_DATABASE_ADAPTERS.md)
+### [DATABASE_ADAPTERS.md](./DATABASE_ADAPTERS.md)
  
 **Ready-to-use adapters for 9+ databases:**
  
@@ -71,7 +71,7 @@ Each adapter includes:
  
 ## 🎯 Specific Implementations
  
-### [HIVE_CONVEX_SYNC.md](./HIVE_CONVEX_SYNC.md)
+### [CONVEX_SYNC.md](./CONVEX_SYNC.md)
  
 **Detailed Convex.dev integration guide:**
 - Convex schema setup
@@ -99,16 +99,16 @@ Each adapter includes:
 ## 📋 Choosing Your Guide
  
 ### "I want to get sync working FAST"
-→ Start with **[HIVE_SYNC_QUICK_START.md](./HIVE_SYNC_QUICK_START.md)**
+→ Start with **[QUICK_START.md](./QUICK_START.md)**
  
 ### "I'm building for production"
-→ Read **[HIVE_SYNC_COMPLETE_GUIDE.md](./HIVE_SYNC_COMPLETE_GUIDE.md)**
+→ Read **[COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md)**
  
 ### "I need code for [specific database]"
-→ Check **[HIVE_SYNC_DATABASE_ADAPTERS.md](./HIVE_SYNC_DATABASE_ADAPTERS.md)**
+→ Check **[DATABASE_ADAPTERS.md](./DATABASE_ADAPTERS.md)**
  
 ### "I'm using Convex"
-→ Use **[HIVE_CONVEX_SYNC.md](./HIVE_CONVEX_SYNC.md)**
+→ Use **[CONVEX_SYNC.md](./CONVEX_SYNC.md)**
  
 ### "I want to understand triggers deeply"
 → Study **[BLADE_TRIGGERS_SYNC_GUIDE.md](./BLADE_TRIGGERS_SYNC_GUIDE.md)**
@@ -416,4 +416,5 @@ You now have everything you need to:
  
 **Questions?** Check the troubleshooting sections in each guide or open an issue in the repository.
 Request changes...
+
 
