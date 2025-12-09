@@ -1,0 +1,2 @@
+-- Supabase setup SQL for Hive sync
+-- TODO: Add SQL example
