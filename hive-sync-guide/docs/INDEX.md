@@ -321,13 +321,13 @@ Look for:
 ## 🎯 Next Steps
  
 ### Phase 1: Basic Setup
-1. Read [Quick Start Guide](./HIVE_SYNC_QUICK_START.md)
-2. Choose your database from [Adapters Guide](./HIVE_SYNC_DATABASE_ADAPTERS.md)
+1. Read [Quick Start Guide](./QUICK_START.md)
+2. Choose your database from [Adapters Guide](./DATABASE_ADAPTERS.md)
 3. Implement the 4 core components
 4. Test with curl and sample data
  
 ### Phase 2: Production Ready
-1. Read [Complete Guide](./HIVE_SYNC_COMPLETE_GUIDE.md)
+1. Read [Complete Guide](./COMPLETE_GUIDE.md)
 2. Implement error handling & retry logic
 3. Add monitoring and logging
 4. Set up rate limiting
@@ -368,7 +368,7 @@ Look for:
  
 ### Official Blade Documentation
 - Blade Triggers: [blade.new/docs/triggers](https://blade.new/docs/triggers)
-- Hive Database: [blade.new/docs/hive](https://blade.new/docs/hive)
+- Hive Database: [blade.new/hive](https://github.com/ronin-co/hive)
  
 ### Database Documentation
 - Convex: [docs.convex.dev](https://docs.convex.dev)
@@ -416,6 +416,7 @@ You now have everything you need to:
  
 **Questions?** Check the troubleshooting sections in each guide or open an issue in the repository.
 Request changes...
+
 
 
 
