@@ -405,7 +405,7 @@ app.post('/sync', async (c) => {
  
 ```bash
 # Start your Blade app
-bun dev
+bun run dev
 ```
  
 Sign up a new user and check if they appear in your external database.
@@ -497,5 +497,6 @@ openssl rand -hex 32
 ---
  
 **That's it!** You now have a working sync system between Blade's Hive database and your external database. 🎉
+
 
 
